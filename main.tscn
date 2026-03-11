@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5qe61ptu6kxu"]
+
+[ext_resource type="PackedScene" uid="uid://brqrmiolwqesl" path="res://PlayerPaddle.tscn" id="1_rcv36"]
+[ext_resource type="Script" path="res://PlayerPaddle.gd" id="2_0b5bl"]
+[ext_resource type="Texture2D" uid="uid://dkyuf6rhi4ou4" path="res://assets/Ball.png" id="3_1881w"]
+[ext_resource type="Script" path="res://ball.gd" id="3_ojns0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5hgp"]
+size = Vector2(16, 16)
+
+[node name="Main" type="Node"]
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("1_rcv36")]
+position = Vector2(23, 250)
+script = ExtResource("2_0b5bl")
+
+[node name="Ball" type="Area2D" parent="."]
+script = ExtResource("3_ojns0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball"]
+position = Vector2(428, 263)
+texture = ExtResource("3_1881w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(430, 265)
+shape = SubResource("RectangleShape2D_e5hgp")
+
+[connection signal="area_entered" from="PlayerPaddle" to="Ball" method="_on_player_paddle_area_entered"]
