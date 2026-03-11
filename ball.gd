@@ -7,9 +7,9 @@ var direction = Vector2.ZERO
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	direction.x = -1
 	
 func _process(delta):
-	direction.x = -1
 	
 	position += direction * speed * delta
 
