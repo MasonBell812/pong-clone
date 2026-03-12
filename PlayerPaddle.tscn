@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_636wx"]
 size = Vector2(12, 174)
 
-[node name="PlayerPaddle" type="Area2D"]
+[node name="PlayerPaddle" type="CharacterBody2D" groups=["paddle"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uf5ch")

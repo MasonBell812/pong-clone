@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed = 300.0
 var screen_size = Vector2.ZERO
@@ -18,3 +18,7 @@ func _process(delta):
 	# Stops paddle from leaving the screan
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0 + (87 * get_scale()[1]), screen_size.y - (87 * get_scale()[1]))
+
+
+func _on_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.
