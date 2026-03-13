@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5qe61ptu6kxu"]
+[gd_scene load_steps=5 format=3 uid="uid://b5qe61ptu6kxu"]
 
 [ext_resource type="PackedScene" uid="uid://brqrmiolwqesl" path="res://PlayerPaddle.tscn" id="1_rcv36"]
 [ext_resource type="Script" path="res://PlayerPaddle.gd" id="2_0b5bl"]
 [ext_resource type="PackedScene" uid="uid://dkb3hyv0slxd8" path="res://ball.tscn" id="3_lxi1i"]
+[ext_resource type="PackedScene" uid="uid://4km1euyao2xr" path="res://wall_top.tscn" id="4_7vuwb"]
 
 [node name="Main" type="Node"]
 
@@ -11,3 +12,8 @@ position = Vector2(23, 250)
 script = ExtResource("2_0b5bl")
 
 [node name="Ball" parent="." instance=ExtResource("3_lxi1i")]
+
+[node name="WallTop" parent="." instance=ExtResource("4_7vuwb")]
+
+[node name="WallTop2" parent="." instance=ExtResource("4_7vuwb")]
+position = Vector2(0, 536)
