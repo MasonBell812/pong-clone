@@ -1,19 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5qe61ptu6kxu"]
+[gd_scene load_steps=6 format=3 uid="uid://b5qe61ptu6kxu"]
 
 [ext_resource type="PackedScene" uid="uid://brqrmiolwqesl" path="res://PlayerPaddle.tscn" id="1_rcv36"]
 [ext_resource type="Script" path="res://PlayerPaddle.gd" id="2_0b5bl"]
 [ext_resource type="PackedScene" uid="uid://dkb3hyv0slxd8" path="res://ball.tscn" id="3_lxi1i"]
 [ext_resource type="PackedScene" uid="uid://4km1euyao2xr" path="res://wall_top.tscn" id="4_7vuwb"]
+[ext_resource type="Script" path="res://player_paddle.gd" id="5_h01iv"]
 
 [node name="Main" type="Node"]
 
 [node name="PlayerPaddle" parent="." instance=ExtResource("1_rcv36")]
-position = Vector2(23, 250)
+position = Vector2(23, 271)
 script = ExtResource("2_0b5bl")
 
 [node name="Ball" parent="." instance=ExtResource("3_lxi1i")]
+modulate = Color(0.756087, 0.756087, 0.756087, 1)
 
 [node name="WallTop" parent="." instance=ExtResource("4_7vuwb")]
 
 [node name="WallTop2" parent="." instance=ExtResource("4_7vuwb")]
 position = Vector2(0, 536)
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 884.0
+offset_bottom = 546.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerPaddle2" parent="." instance=ExtResource("1_rcv36")]
+position = Vector2(829, 271)
+script = ExtResource("5_h01iv")

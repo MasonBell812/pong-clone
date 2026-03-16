@@ -3,15 +3,18 @@ extends CharacterBody2D
 @export var speed = 300.0
 var screen_size = Vector2.ZERO
 
+func movement() -> Vector2:
+	if Input.is_action_pressed("move_up_p1"):
+		return Vector2(0,-1)
+	if Input.is_action_pressed("move_down_p1"):
+		return Vector2(0,1)
+	return Vector2.ZERO
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta):
-	var direction = Vector2.ZERO
-	if Input.is_action_pressed("move_up"):
-		direction.y -= 1
-	if Input.is_action_pressed("move_down"):
-		direction.y += 1
+	var direction = movement()
 	
 	
 	position += direction * speed * delta
